@@ -1,0 +1,107 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- TOP BAR ---------------- */
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+/* Launcher Button */
+.apps-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(3, 6px);
+  grid-template-rows: repeat(3, 6px);
+  gap: 4px;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.apps-button span {
+  width: 6px;
+  height: 6px;
+  background: red;
+  border-radius: 50%;
+}
+
+.apps-button:hover {
+  background: rgba(60, 64, 67, 0.08);
+}
+
+/* ---------------- APPS PANEL ---------------- */
+
+.apps-panel {
+  position: fixed;
+  top: 60px;
+  right: 16px;
+  background: black;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 16px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: 0.2s ease;
+}
+
+.apps-panel--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* App Tile */
+.apps-tile {
+  text-decoration: none;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.apps-tile:hover {
+  background: #f1f3f4;
+}
+
+.apps-tile img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.apps-tile span {
+  font-size: 13px;
+}
