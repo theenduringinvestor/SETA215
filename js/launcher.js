@@ -7,16 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  function setPanelOpen(isOpen) {
+    panel.classList.toggle("apps-panel--open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  }
+
   function showPanel(e) {
     e.stopPropagation();
-    panel.classList.toggle("apps-panel--open");
+    setPanelOpen(!panel.classList.contains("apps-panel--open"));
   }
 
   toggle.addEventListener("click", showPanel);
 
   document.addEventListener("click", function (e) {
     if (!panel.contains(e.target) && !toggle.contains(e.target)) {
-      panel.classList.remove("apps-panel--open");
+      setPanelOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && panel.classList.contains("apps-panel--open")) {
+      setPanelOpen(false);
+      toggle.focus();
     }
   });
 });
