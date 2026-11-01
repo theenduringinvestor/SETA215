@@ -19,7 +19,7 @@ body {
 /* ---------------- TOP BAR ---------------- */
 
 .top-bar {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   display: flex;
@@ -27,8 +27,32 @@ body {
   padding: 16px;
 }
 
+.site-logo {
+  position: absolute;
+  top: calc(50% + 10px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.site-logo img {
+  display: block;
+  width: 210px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .site-logo img {
+    width: min(250px, calc(100vw - 112px));
+  }
+}
+
 /* Launcher Button */
 .apps-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
   width: 40px;
   height: 40px;
   border: none;
@@ -50,8 +74,9 @@ body {
   border-radius: 50%;
 }
 
-.apps-button:hover {
-  background: rgba(60, 64, 67, 0.08);
+.apps-button:focus-visible {
+  outline: 2px solid red;
+  outline-offset: 2px;
 }
 
 /* ---------------- APPS PANEL ---------------- */
@@ -61,15 +86,22 @@ body {
   top: 60px;
   right: 16px;
   width: calc(100vw - 32px);
-  max-width: 394px;
+  max-width: 350px;
   background: black;
+  border: 1px solid red;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  padding: 16px;
+  padding: 12px;
 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 8px;
+  align-content: start;
+  max-height: calc(100vh - 76px);
+  max-height: calc(100dvh - 76px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 
   opacity: 0;
   pointer-events: none;
@@ -96,19 +128,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
+  padding: 8px 4px;
   border-radius: 12px;
-  transition: background 0.2s ease;
+  background-color: black;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.apps-tile:hover {
-  background: #f1f3f4;
+.apps-tile:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.apps-tile:focus-visible {
+  outline: 2px solid red;
+  outline-offset: 1px;
 }
 
 .apps-tile img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 8px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 6px;
+  object-fit: contain;
 }
 
 .apps-tile span {
@@ -170,13 +209,22 @@ body {
   color: red;
 }
 
-.legal-content {
+/* ---------------- INNER PAGES ---------------- */
+
+.legal-content,
+.page-content {
   flex: 1;
   padding: 80px 24px 32px;
   color: #fff;
   text-align: center;
 }
 
-.legal-content h1 {
+.legal-content h1,
+.page-content h1 {
   font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.page-content p {
+  margin-top: 12px;
+  color: red;
 }
