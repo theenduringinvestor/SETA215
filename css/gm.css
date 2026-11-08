@@ -85,6 +85,7 @@ body {
   position: absolute;
   top: 60px;
   right: 16px;
+  z-index: 9;
   width: calc(100vw - 32px);
   max-width: 350px;
   background: black;
@@ -329,16 +330,80 @@ body {
   padding: 10px 24px;
   border: 1px solid red;
   border-radius: 999px;
-  background: red;
-  color: #000;
+  background: black;
+  color: red;
   font-weight: 700;
   text-decoration: none;
 }
 
-.home-cta:hover,
-.home-cta:focus-visible {
+/* Poster slideshow */
+.poster-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 900px;
+  margin: 32px auto 0;
+}
+
+.poster-slides {
+  flex: 0 1 300px;
+  min-width: 0;
+}
+
+.poster-slide {
+  position: relative;
+  margin: 0;
+}
+
+.poster-slide[hidden] {
+  display: none;
+}
+
+.poster-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid red;
+  border-radius: 12px;
+}
+
+.poster-watch {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 6px 14px;
+  background: #000;
+  border: 1px solid red;
+  border-radius: 999px;
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.poster-watch:hover {
+  text-decoration: underline;
+}
+
+.poster-watch:focus-visible {
+  outline: 2px solid red;
+  outline-offset: 2px;
+}
+
+.poster-btn {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid red;
+  border-radius: 50%;
   background: #000;
   color: red;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.poster-btn:focus-visible {
   outline: 2px solid red;
   outline-offset: 2px;
 }
@@ -348,5 +413,9 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
     max-width: 340px;
+  }
+
+  .poster-slides {
+    flex-basis: 240px;
   }
 }
