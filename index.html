@@ -108,10 +108,23 @@
         </div>
       </div>
 
-      <section class="poster-show" aria-label="Movie posters" aria-roledescription="carousel">
-        <button class="poster-btn poster-btn--prev" type="button" aria-label="Previous poster">&#10094;</button>
+      <section
+        class="poster-show"
+        aria-label="Movie posters"
+        aria-roledescription="carousel"
+      >
+        <button
+          class="poster-btn poster-btn--prev"
+          type="button"
+          aria-label="Previous poster"
+        >
+          &#10094;
+        </button>
         <div class="poster-slides">
-          <figure class="poster-slide" aria-label="The Ganja">
+          <figure
+            class="poster-slide poster-slide--with-trailer"
+            aria-label="The Ganja"
+          >
             <img src="posters/tg.jpg" alt="The Ganja poster" />
             <a
               class="poster-watch"
@@ -120,8 +133,29 @@
               rel="noopener noreferrer"
               >Watch Now</a
             >
+            <div class="poster-trailer">
+              <iframe
+                src="https://www.youtube.com/embed/pOcjqiOZS5w?si=6vTMqeCQMk9ZfFdY"
+                title="The Ganja video"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
           </figure>
-          <figure class="poster-slide" aria-label="Yo Bro: The Movie" hidden>
+          <figure
+            class="poster-slide poster-slide--with-trailer"
+            aria-label="Yo Bro: The Movie"
+            hidden
+          >
             <img src="posters/yobro.jpg" alt="Yo Bro: The Movie poster" />
             <a
               class="poster-watch"
@@ -130,12 +164,32 @@
               rel="noopener noreferrer"
               >Watch Now</a
             >
-          </figure>
-          <figure class="poster-slide" aria-label="Which Way Out" hidden>
-            <img src="posters/witchwayout.png" alt="Which Way Out poster" />
+            <div class="poster-trailer">
+              <iframe
+                src="https://www.youtube.com/embed/pOcjqiOZS5w?si=6vTMqeCQMk9ZfFdY"
+                title="YouTube video player"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
           </figure>
         </div>
-        <button class="poster-btn poster-btn--next" type="button" aria-label="Next poster">&#10095;</button>
+        <button
+          class="poster-btn poster-btn--next"
+          type="button"
+          aria-label="Next poster"
+        >
+          &#10095;
+        </button>
       </section>
     </main>
 
