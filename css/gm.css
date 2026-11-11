@@ -369,6 +369,11 @@ body {
   display: none;
 }
 
+.poster-artwork {
+  position: relative;
+  flex: none;
+}
+
 .poster-slide img {
   display: block;
   width: auto;
@@ -440,12 +445,18 @@ body {
     max-width: 340px;
   }
 
+  .poster-show {
+    position: relative;
+    display: block;
+  }
+
   .poster-slides {
-    flex-basis: min(360px, calc(100vw - 130px));
+    width: 100%;
   }
 
   .poster-slide--with-trailer {
     flex-direction: column;
+    width: 100%;
   }
 
   .poster-trailer {
@@ -454,5 +465,19 @@ body {
 
   .poster-slide img {
     height: min(330px, calc(94vw - 35px));
+  }
+
+  .poster-btn {
+    position: absolute;
+    top: calc(min(330px, calc(94vw - 35px)) / 2 - 20px);
+    z-index: 1;
+  }
+
+  .poster-btn--prev {
+    left: 0;
+  }
+
+  .poster-btn--next {
+    right: 0;
   }
 }
