@@ -430,30 +430,19 @@ body {
   opacity: 0;
 }
 
-.poster-watch:hover {
-  border-radius: 6px;
-  width: auto;
-  padding: 8px 12px;
-}
-
-.poster-watch:hover .watch-text {
-  display: inline-block;
-  opacity: 1;
-}
-
 .poster-watch:focus-visible {
   outline: 2px solid red;
   outline-offset: 2px;
 }
 
-@media (hover: none) {
-  .poster-watch {
+@media (hover: hover) and (pointer: fine) {
+  .poster-watch:hover {
     border-radius: 6px;
     width: auto;
     padding: 8px 12px;
   }
 
-  .poster-watch .watch-text {
+  .poster-watch:hover .watch-text {
     display: inline-block;
     opacity: 1;
   }
