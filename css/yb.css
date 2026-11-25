@@ -1,0 +1,30 @@
+@import url('gm.css');
+
+.yb-gallery {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .yb-gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .yb-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .yb-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .yb-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
